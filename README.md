@@ -60,6 +60,28 @@ sam local invoke --event <イベントファイルまでのパス> <関数名>
 sam local invoke --event ./events/get.json LambdaFunction
 ```
 
+### チェックコマンド
+
+```shell
+# `PYTHONPATH`を設定します。
+export PYTHONPATH="$(pwd)/src/:$PYTHONPATH"
+
+# テスト
+python -m pytest ./tests/ -v
+
+# Lint
+python -m flake8 ./src/ ./tests/
+
+# Formatter
+python -m black ./src/ ./tests/
+
+# Import Sort
+python -m isort ./src/ ./tests/
+
+# Type Check
+python -m mypy --ignore-missing-imports ./src/ ./tests/
+```
+
 ## 本番環境の準備
 
 ### GitHub Secretsの設定
@@ -70,6 +92,29 @@ sam local invoke --event ./events/get.json LambdaFunction
 | AWS_ACCESS_KEY_ID | AWSのアクセスキーID |
 | AWS_SECRET_ACCESS_KEY | AWSのシークレットアクセスキー |
 | AWS_REGION | リージョン名 |
+
+`v-*`の形式のタグをつけると、`GitHub Actions`が実行され、リソースのプロビジョニングが行われます。  
+以下のコマンドで、デプロイされたAPIのURLを確認できます。  
+
+```shell
+aws cloudformation describe-stacks --stack-name <プロジェクト名> --query 'Stacks[].Outputs[?OutputKey==`LambdaFunctionEventApi`].OutputValue' --output text
+```
+
+このURLに対して、以下のパスを付して、リクエストを投げます。  
+
+- /api/ping (GET)
+- /api/ping (POST)
+- /api/ping (PUT)
+- /api/ping (DELETE)
+
+`{"message":"Hello GET."}`のようなレスポンスが返ってくればOKです。  
+
+また、以下のコマンドで手動でデプロイすることもできます。  
+
+```shell
+sam build --use-container
+sam deploy --stack-name <プロジェクト名>
+```
 
 ## 環境情報
 
