@@ -6,8 +6,6 @@ body:
   - type: textarea
     attributes:
       label: "Content"
-  - type: markdown
-    attributes:
       value: |
         # 🐙🐬🐸🦀🦈
 
