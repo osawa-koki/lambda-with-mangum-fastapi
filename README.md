@@ -2,6 +2,8 @@
 
 🤠🤠🤠 Mangumを使用してFastAPIを`AWS Lambda`で動かすサンプルです！  
 
+![成果物](./docs/images/fruit.gif)  
+
 ## 開発環境の構築方法
 
 最初にAWS CLIをインストールします。  
