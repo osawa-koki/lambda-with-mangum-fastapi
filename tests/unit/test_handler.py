@@ -7,7 +7,6 @@ from .fixture import apigw_event
 
 
 def test_ping_get(apigw_event):
-
     apigw_event["httpMethod"] = "GET"
     apigw_event["path"] = "/api/ping"
     apigw_event["body"] = {}
@@ -21,7 +20,6 @@ def test_ping_get(apigw_event):
 
 
 def test_ping_post(apigw_event):
-
     apigw_event["httpMethod"] = "POST"
     apigw_event["path"] = "/api/ping"
     apigw_event["body"] = {}
@@ -35,7 +33,6 @@ def test_ping_post(apigw_event):
 
 
 def test_ping_put(apigw_event):
-
     apigw_event["httpMethod"] = "PUT"
     apigw_event["path"] = "/api/ping"
     apigw_event["body"] = {}
@@ -49,7 +46,6 @@ def test_ping_put(apigw_event):
 
 
 def test_ping_delete(apigw_event):
-
     apigw_event["httpMethod"] = "DELETE"
     apigw_event["path"] = "/api/ping"
     apigw_event["body"] = {}

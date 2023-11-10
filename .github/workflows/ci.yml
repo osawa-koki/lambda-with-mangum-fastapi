@@ -24,3 +24,5 @@ jobs:
       run: python -m pytest ./tests/ -v
     - name: Flake8 linting
       run: python -m flake8 ./src/ ./tests/
+    - name: Black formatting check
+      run: python -m black --check ./src/ ./tests/
