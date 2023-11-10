@@ -59,7 +59,7 @@ sam local start-api
 sam local invoke --event <イベントファイルまでのパス> <関数名>
 
 # 例
-sam local invoke --event ./events/get.json LambdaFunction
+sam local invoke --event ./events/event.json LambdaFunction
 ```
 
 ### チェックコマンド
