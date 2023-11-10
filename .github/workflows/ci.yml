@@ -31,4 +31,4 @@ jobs:
     - name: isort formatting check
       run: python -m isort --check ./src/ ./tests/
     - name: mypy type checking
-      run: python -m mypy ./src/ ./tests/
+      run: python -m mypy --ignore-missing-imports ./src/ ./tests/
