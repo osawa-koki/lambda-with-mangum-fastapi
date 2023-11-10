@@ -2,6 +2,7 @@ import pytest
 
 from .const import request_context
 
+
 @pytest.fixture()
 def apigw_event():
     """ Generates API GW Event"""
