@@ -1,10 +1,10 @@
 import json
 
-import pytest
-
 from src import app
 
+# flake8: noqa: E501
 from .fixture import apigw_event
+
 
 def test_ping_get(apigw_event):
 
