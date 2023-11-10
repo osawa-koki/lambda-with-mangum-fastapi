@@ -23,4 +23,5 @@ async def ping_put():
 async def ping_delete():
     return {"message": "Hello DELETE."}
 
+
 lambda_handler = Mangum(app)
