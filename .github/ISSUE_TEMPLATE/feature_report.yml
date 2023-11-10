@@ -3,6 +3,9 @@ description: File a feature report
 title: "[Feature]: "
 labels: ["feature"]
 body:
+  - type: textarea
+    attributes:
+      label: "Content"
   - type: markdown
     attributes:
       value: |

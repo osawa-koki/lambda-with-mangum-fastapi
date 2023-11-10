@@ -3,6 +3,9 @@ description: File a bug report
 title: "[Bug]: "
 labels: ["bug"]
 body:
+  - type: textarea
+    attributes:
+      label: "Content"
   - type: markdown
     attributes:
       value: |
