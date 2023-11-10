@@ -26,3 +26,5 @@ jobs:
       run: python -m flake8 ./src/ ./tests/
     - name: Black formatting check
       run: python -m black --check ./src/ ./tests/
+    - name: isort formatting check
+      run: python -m isort --check ./src/ ./tests/

@@ -5,6 +5,7 @@
     "github.copilot-chat",
     "ms-python.flake8",
     "ms-python.python",
-    "ms-python.black-formatter"
+    "ms-python.black-formatter",
+    "ms-python.isort"
   ]
 }
